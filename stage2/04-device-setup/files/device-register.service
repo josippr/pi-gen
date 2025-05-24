@@ -1,0 +1,12 @@
+[Unit]
+Description=Device Registration Script
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/bin/python3 /opt/device/register_device.py
+Restart=no
+Type=oneshot
+
+[Install]
+WantedBy=multi-user.target
