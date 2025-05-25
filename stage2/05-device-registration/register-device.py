@@ -24,7 +24,7 @@ def main():
     payload = {
         "serial": config["serial"],
         "deviceName": config["deviceName"],
-        "token": config.get("token", "")
+        "token": config["token"],
     }
 
     try:

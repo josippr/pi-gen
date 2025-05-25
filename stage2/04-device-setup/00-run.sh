@@ -16,6 +16,9 @@ DATE_ID=$(date +"%y%m-%H-%M")
 SERIAL="lms-proto-t1-${MAC}-${DATE_ID}"
 DEVICENAME="lms-proto-t1-${MAC}"
 
+# Generate token
+TOKEN=$(openssl rand -hex 32)
+
 cat > "${CONFIG_DIR}/device.conf" <<EOF
 serial=${SERIAL}
 deviceName=${DEVICENAME}
@@ -24,5 +27,5 @@ registered=false
 registeredAt=
 license=
 lastSeen=
-token=
+token=${TOKEN}
 EOF
